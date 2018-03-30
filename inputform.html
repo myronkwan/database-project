@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset = "utf-8">
+	<title>Repair Center</title>
+</head>
+<body>
+	<form method="post" action = "http://students.engr.scu.edu/~mkwan/generateRepairJob.php">
+	<fieldset>
+		<legend style="font-size:24px">Customer Info</legend>
+		<label for="name">Name:</label>
+		<input type="text" name="name" id="name">
+		<label for="phone">Phone Number:</label>
+		<input type="number" name="phone" id="phone">
+		<legend style="font-size:24px"> Device Information</legend>
+		<label for="did">Device ID(if already entered):</label>
+		<input type="text" name="did" id="did">
+		<label for="model">Model:</label>
+		<input type="text" name="model" id="model">
+		<label for="price">Price:</label>
+		<input type="number" step="0.01" min =0 name="price" id="price">
+		<label for="year">Year:</label>
+		<input type="number" min=0 name="year" id="year"><br></br>
+		<label for="devicetype">Computer or Printer?</label>
+		<input type="radio" name="dtype" id="computer" value=1>
+		<label for="computer">computer</label>
+		<input type="radio" name="dtype" id="printer" value=0>
+		<label for="printer">printer</label></br>
+	</fieldset>
+	<fieldset>
+		<input type="submit" value="Create Repair Job ">
+		<input type="reset" value = "Clear">
+	</fieldset>
+	</form>
+	<form method="post" action = "http://students.engr.scu.edu/~mkwan/generateContract.php">
+	<fieldset>
+		<legend style="font-size:24px">New Service Contract</legend>
+		<label for="itemid">Machine ID:</label>
+		<input type="text" name="itemid" id="itemid">
+		<label for="name2"> Name: </label>
+		<input type="text" name="name2" id="name2">
+		<label for="phone2"> Phone: </label>
+		<input type="number" name="phone2" id="phone2">
+		
+	</fieldset>
+	<fieldset>
+		<input type="submit" value="Create Service Contract ">
+		<input type="reset" value = "Clear">
+	</fieldset>
+	</form>
+	<br></br>
+	<form method="post" action = "http://students.engr.scu.edu/~mkwan/updateproblems.php">
+	<fieldset>
+		<legend style="font-size:24px">Update Problem Codes</legend>
+		<br><label for="rjid3">REPAIRJOB ID:</label>
+		<input type="text" name="rjid3" id="rjid3"></br>
+		<br>Problem codes: 1=mouse 2=screen 3=gpu 4=virus 5= power supply 5=water dmg 6=cartridge 7=motherboard 
+		</br>
+		<input type="checkbox" name="problemcodes[]" id="1" value="1">
+		<label for="1">1</label>
+		<input type="checkbox" name="problemcodes[]" id="2" value="2">
+		<label for="2">2</label>
+		<input type="checkbox" name="problemcodes[]" id="3" value="3">
+		<label for="3">3</label>
+		<input type="checkbox" name="problemcodes[]" id="4" value="4">
+		<label for="4">4</label>
+		<input type="checkbox" name="problemcodes[]" id="5" value="5">
+		<label for="5">5</label>
+		<input type="checkbox" name="problemcodes[]" id="6" value="6">
+		<label for="6">6</label>
+		<input type="checkbox" name="problemcodes[]" id="7" value="7">
+		<label for="7">7</label>
+		<br></br>
+	<input type="submit" value="Update">
+		<input type="reset" value = "Clear">
+	</fieldset>
+	</form>
+	<br></br>
+	<form method="post" action = "http://students.engr.scu.edu/~mkwan/updatestatus.php">
+	<fieldset>
+		<legend style="font-size:24px">Update Repair Job Status</legend>
+		<label for="rjid2">REPAIRJOB ID:</label>
+		<input type="text" name="rjid2" id="rjid2">
+		<label for="status"> Status?</label>
+		<input type="radio" name="status" id="ready" value="READY">
+		<label for="ready">READY</label>
+		<input type="radio" name="status" id="done" value="DONE">
+		<label for="done">DONE</label>
+		<input type="radio" name="status" id="underrepair" value="UNDER_REPAIR">
+		<label for="underrepair">UNDER REPAIR</label>
+		<br></br>
+		<input type="submit" value="Update">
+		<input type="reset" value = "Clear">
+	</fieldset>
+	</form>
+	<form method="post" action = "http://students.engr.scu.edu/~mkwan/generatebill.php">
+	<fieldset>
+			<legend style="font-size:24px">Generate Customer Bill</legend>
+			<label for="rjid"> Repairjob ID:</label>
+			<input type="text" name="rjid" id="rjid">
+			<input type="submit" value="Enter">
+			<input type="reset" value = "Clear">
+	</fieldset>	
+	</form>
+	<form method="post" action = "http://students.engr.scu.edu/~mkwan/generaterepairlog.php">
+		<input type="submit" value="Repair Log">
+	</form>
+	<br></br>
+	<form method="post" action = "http://students.engr.scu.edu/~mkwan/getrev.php">
+		<input type="submit" value="Revenue">
+	</form>
+	<br></br>
+	<form method="post" action = "http://students.engr.scu.edu/~mkwan/viewdevices.php">
+		<input type="submit" value="View Devices">
+	</form>
+	
+	
+</body>
+
+</html>
